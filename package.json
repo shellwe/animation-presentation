@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "name": "animation-presentation",
+  "description": "This is a presentation for Nebraska Code 2021. Feel free to use anything of value here!",
+  "version": "1.0.0",
+  "main": "index.htm",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.35.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellwe/animation-presentation.git"
+  },
+  "keywords": [
+    "animation"
+  ],
+  "author": "Shawn Hellwege",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shellwe/animation-presentation/issues"
+  },
+  "homepage": "https://github.com/shellwe/animation-presentation#readme"
+}

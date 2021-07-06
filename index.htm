@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -19,14 +20,53 @@
             <h1>Animation on the Web</h1>
             <h2>Shawn Hellwege</h2>
         </div>
-        <div id="whentouse" class="slide">
+        <div id="whentouse" class="slide slide-full">
             <h1>When to use animations</h1>
         </div>
-        <div id="acessibility" class="slide">
+        <div id="accordianExample" class="slide slide-full">
+            <h1>When to use animations</h1>
+        </div>
+        <div id="acessibility" class="slide slide-full">
 
         </div>
+        <div id="cssTransform" class="slide slide-full">
+            <h1>CSS</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>Transforms - scale | rotate | skew | translate
+                        <br>-<a href="https://css-transform.moro.es/">example</a>
+                    </li>
+                    <li>Transitions - property | duration | delay | timing-function
+                        <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
+
+                    </li>
+                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode | play-state</li>
+                    <li>keyframes - from | to</li>
+                    <!-- keyframes allow you to use the same action over and over -->
+                </ul>
+            </div>
+        </div>
+        <div id="cssTransitionExample" class="slide slide-full slide-two-column">
+            <h1>CSS Animation Example</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <!-- <button id="cssAnimationToggle1">Toggle Animation</button> -->
+                <i class="fas fa-heart" id="cssTransition"></i>
+            </div>
+        </div>
+        <div id="cssAnimationExample" class="slide slide-full slide-two-column">
+            <h1>CSS Animation Example</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <!-- <button id="cssAnimationToggle1">Toggle Animation</button> -->
+                <i class="fas fa-badge" id="cssAnimation"></i>
+            </div>
+        </div>
     </div>
-    <script src="scripts.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>

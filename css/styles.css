@@ -1,0 +1,211 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-x: hidden;
+}
+
+.slide {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  background: linear-gradient(135deg, #84eaff 0%, #bcf4ff 3%, #97ecff 6%, #bcf4ff 9%, #e1faff 20%, #fbfeff 90%, #bcf4ff 93%, #fafcff 96%, white 100%);
+  border: #b8f3ff thin solid;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 25px;
+  padding: clamp(25px, 10%, 100px);
+}
+
+.slide h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 4rem;
+}
+
+.slide h2 {
+  font-size: 3rem;
+}
+
+.slide h2,
+.slide p,
+.slide li,
+.slide ol {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+.slide i.fas {
+  font-size: 300px;
+}
+
+.slide a {
+  color: #56887d;
+}
+
+.slide .centered-content {
+  display: -ms-grid;
+  display: grid;
+}
+
+.slide .centered-content * {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.slide.slide-title {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas: "slideTitle" "slideContent";
+}
+
+.slide.slide-title h1 {
+      justify-self: center;
+  -ms-flex-item-align: end;
+      align-self: end;
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: slideTitle;
+}
+
+.slide.slide-title h2 {
+      justify-self: center;
+  -ms-flex-item-align: start;
+      align-self: start;
+  text-align: center;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: slideContent;
+}
+
+.slide.slide-full,
+.slide .slide-two-column {
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas: "slideTitle slideTitle" "slideContent slideContent";
+}
+
+.slide.slide-full h1,
+.slide .slide-two-column h1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: slideTitle;
+}
+
+.slide.slide-full .slide-content,
+.slide .slide-two-column .slide-content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: slideContent;
+}
+
+.slide.slide-two-column {
+      grid-template-areas: "slideTitle slideTitle" "slideContent slideContentRight";
+}
+
+.slide.slide-two-column .slide-content-right {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: slideContentRight;
+}
+
+#cssTransitionExample #cssTransition {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: pink;
+}
+
+#cssTransitionExample #cssTransition:hover {
+  color: red;
+  font-size: 500px;
+  -webkit-transition: all 1s cubic-bezier(0.72, 1.56, 0.66, -0.13);
+  transition: all 1s cubic-bezier(0.72, 1.56, 0.66, -0.13);
+}
+
+#cssAnimationExample #cssAnimation {
+  color: red;
+  -webkit-animation: spinningColors 4s infinite;
+          animation: spinningColors 4s infinite;
+}
+
+@-webkit-keyframes spinningColors {
+  0% {
+    color: red;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    color: yellow;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    color: blue;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    color: green;
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes spinningColors {
+  0% {
+    color: red;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  25% {
+    color: yellow;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  50% {
+    color: blue;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    color: green;
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

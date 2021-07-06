@@ -159,8 +159,8 @@ img {
 
 #cssAnimationExample #cssAnimation {
   color: red;
-  -webkit-animation: spinningColors 4s infinite;
-          animation: spinningColors 4s infinite;
+  -webkit-animation: spinningColors 8s linear infinite;
+          animation: spinningColors 8s linear infinite;
 }
 
 @-webkit-keyframes spinningColors {

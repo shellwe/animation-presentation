@@ -20,17 +20,31 @@
             <h1>Animation on the Web</h1>
             <h2>Shawn Hellwege</h2>
         </div>
-        <div id="whentouse" class="slide slide-full">
-            <h1>When to use animations</h1>
+        <div id="whatisit" class="slide slide-full">
+            <h1>Performance Expense</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>transform and opacity are cheapest cost to performance</li>
+                    <li>Rendering Pipeline order<br />
+                        Style > Layout > Paint > Composite</li>
+                    <li>use sparingly
+                        <br>-<a href="https://csstriggers.com/">Guide for how performant operatoins are on each
+                            browser</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="accordianExample" class="slide slide-full">
+        <div id="whentouse" class="slide slide-full">
             <h1>When to use animations</h1>
             <div class="slide-content">
                 <ul>
-                    <li>prefers-reduced-motion</li> <!-- make sure and turn this on before yo go live to make sure everything looks good -->
-                    <li>illustrates changes made</li>
-                    <li>avoids jarring transitions</li> <!-- accordian -->
-                    <li>progress bars/spinning wheels</li>
+                    <li>draw attention</li> <!-- our eyes are hardwired to look at moving objects -->
+                    <li>tell a story</li>
+                    <li>guidance</li>
+                    <!-- progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
+                    <li>What can be animated?
+                        <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">docs</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,6 +52,17 @@
             <h1>Accessibility</h1>
             <div class="slide-content">
                 <ul>
+                    <li>Vestibular disorders
+                        <br>-<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html">WCAG 2.0 guidelines</a>
+                    </li>
+                    <!-- Vestibule system is responsible for sensory information processing and spatial orientation, may experience motion sickness, balance problems, headaches, and nausua -->
+                    <li>speed and size of motion
+                        <br>-<a href="https://admissions.unl.edu/why-nebraska/#mindsets">personal example</a>
+                    </li>
+                    <!-- one time we had the whole background transition around in a waving pattern so we slowed it down and only had it cycle once -->
+                    <li>paralax scrolling</li><!-- use it sparingly -->
+                    <li>prefers-reduced-motion media feature</li>
+                    <!-- make sure and turn this on before yo go live to make sure everything looks good -->
                     <li>hover</li>
                     <li>flashing color</li> <!--  if content flashes more than three times per second it's too much -->
                 </ul>
@@ -55,7 +80,8 @@
                         <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
 
                     </li>
-                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode | play-state</li>
+                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode
+                        | play-state</li>
                     <li>keyframes - from | to</li>
                     <!-- keyframes allow you to use the same action over and over -->
                 </ul>
@@ -79,8 +105,42 @@
                 <i class="fas fa-badge" id="cssAnimation"></i>
             </div>
         </div>
+        <div id="animatingSVGs" class="slide slide-full">
+            <h1>Animating SVGs</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>Transforms - scale | rotate | skew | translate
+                        <br>-<a href="https://css-transform.moro.es/">example</a>
+                    </li>
+                    <li>Transitions - property | duration | delay | timing-function
+                        <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
+                    </li>
+                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode
+                        | play-state</li>
+                    <li>keyframes - from | to</li>
+                    <!-- keyframes allow you to use the same action over and over -->
+                </ul>
+            </div>
+        </div>
+        <div id="animatingSVGs" class="slide slide-full">
+            <h1>GSAP</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>Tweening - from | to | fromto
+                        <br>-<a href="https://greensock.com/">site</a>
+                    </li>
+                    <li>Easing - ease | duration
+                        <br>-<a href="https://greensock.com/ease-visualizer/">example</a>
+                    </li>
+                    <li>Pinning - setPin, pushFollowers, duration</li>
+                    <li></li>
+                    <!-- keyframes allow you to use the same action over and over -->
+                </ul>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 

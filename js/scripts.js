@@ -14,7 +14,7 @@ $(document).ready(function () {
         $(".slide").each(function () {
             console.info($(this));
             if (isScrolledIntoView($(this))) {
-                $(this).find(".slide").addClass("isthisworking");
+                $(this).addClass("isthisworking");
             }
         });
     }

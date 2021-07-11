@@ -138,6 +138,14 @@ img {
     }
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+    #cssAnimationExample {
+        #cssAnimation {
+            animation: none;
+        }
+    }
+ }
+ 
 @keyframes spinningColors {
     0% {
         color: red;

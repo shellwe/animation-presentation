@@ -13,14 +13,35 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
+<!-- checklist to do:
+1. fill out general animation
+2. GSAP
+3. Lottie
+4. Adobe Animate
+5. How to detect how much expense a web animation has
+6. have animation only run when its on screen and maybe add in on click show first item
+7. Add examples of animated gifs  -->
 <body>
     <div id="container">
         <div id="intro" class="slide slide-title">
             <h1>Animation on the Web</h1>
             <h2>Shawn Hellwege</h2>
         </div>
-        <div id="whatisit" class="slide slide-full">
+        <div id="whentouse" class="slide slide-full">
+            <h1>When to use animations</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>draw attention</li> <!-- our eyes are hardwired to look at moving objects, so we want to use it for whenever we are changing icons or text, and  -->
+                    <li>tell a story</li>
+                    <li>guidance</li>
+                    <!-- should feel natural - progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
+                    <li>What can be animated?
+                        <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">docs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="expense" class="slide slide-full">
             <h1>Performance Expense</h1>
             <div class="slide-content">
                 <ul>
@@ -29,16 +50,16 @@
                         Style > Layout > Paint > Composite</li>
                     <li>use sparingly
                         <br>-<a href="https://csstriggers.com/">Guide for how performant operatoins are on each
-                            browser</a>
+                            browser</a><!-- avoid having content animate off screen -->
                     </li>
                 </ul>
             </div>
         </div>
-        <div id="whentouse" class="slide slide-full">
-            <h1>When to use animations</h1>
+        <div id="considerations" class="slide slide-full">
+            <h1>What to consider</h1>
             <div class="slide-content">
                 <ul>
-                    <li>draw attention</li> <!-- our eyes are hardwired to look at moving objects -->
+                    <li>Animation Choreography</li> <!-- Sequencing and easing, traonsformations and focal elements  -->
                     <li>tell a story</li>
                     <li>guidance</li>
                     <!-- progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
@@ -70,12 +91,12 @@
 
         </div>
         <div id="cssTransform" class="slide slide-full">
-            <h1>CSS</h1>
+            <h1>CSS Transitions and Animation</h1>
             <div class="slide-content">
                 <ul>
                     <li>Transforms - scale | rotate | skew | translate
                         <br>-<a href="https://css-transform.moro.es/">example</a>
-                    </li>
+                    </li><!--  should I show an example of each of these? -->
                     <li>Transitions - property | duration | delay | timing-function
                         <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
 
@@ -140,7 +161,10 @@
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 

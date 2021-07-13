@@ -32,13 +32,14 @@
             <h1>When to use animations</h1>
             <div class="slide-content">
                 <ul>
-                    <li>draw attention</li>
+                    <li>Draw attention</li>
                     <!-- our eyes are hardwired to look at moving objects, so we want to use it for whenever we are changing icons or text, and  -->
-                    <li>tell a story</li>
-                    <li>guidance</li>
+                    <li>Tell a story</li>
+                    <li>Guidance</li>
                     <!-- should feel natural - progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
                     <li>What can be animated?
-                        <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">docs</a>
+                        <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties"
+                            target="blank">docs</a>
                     </li>
                 </ul>
             </div>
@@ -47,35 +48,22 @@
             <h1>Performance Expense</h1>
             <div class="slide-content">
                 <ul>
-                    <li>transform and opacity are cheapest cost to performance</li>
-                    <li>Rendering Pipeline order:<br />
+                    <li><em>Transform</em> and <em>opacity</em> are performant</li>
+                    <li>Rendering pipeline order:<br />
                         Style > Layout > Paint > Composite</li>
-                        <!-- style calculates which styles apply to the elements
+                    <!-- style calculates which styles apply to the elements
                         layout generate geometry and position of each element
                         paint fills out the pixels of each element in the layers that make out the page
                         composite which draws the layers out on the screen
                         transofrm and opacity just have to be done on composite-->
-                    <li>use sparingly
-                        <br>-<a href="https://csstriggers.com/">Guide for how performant operations are on each
-                            browser</a><!-- so if you has to go through all 3 for every single frame the browswer would have to go through the layout, paint and composite steps https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/ -->
+                    <li>Use sparingly
+                        <br>-<a href="https://csstriggers.com/" target="blank">Guide for how performant operations are
+                            on each browser</a>
                     </li>
-                    <li>will-change property</li> <!-- replaces the translate 3d hack which utilizes hardware accelleration, will-change lets your browser know that you will be animating and that rendering will be a priority https://dev.opera.com/articles/css-will-change-property/ -->
-                    
-                </ul>
-            </div>
-        </div>
-        <div id="considerations" class="slide slide-full">
-            <h1>What to consider</h1>
-            <div class="slide-content">
-                <ul>
-                    <li>Animation Choreography</li> <!-- Sequencing and easing, traonsformations and focal elements  -->
-                    <li>tell a story</li>
-                    <li>guidance</li>
-                    <!-- progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
-                    <li>What can be animated?
-                        <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">docs</a>
-                    </li>
-                    <li>Organization</li><!-- collaborate as a team to decide where to keep the animation styles, I try to keep the animation styles with the element that is being animated if they are being used once but will have an animations SCSS module for the shared ones -->
+                    <!-- so if you has to go through all 3 for every single frame the browswer would have to go through the layout, paint and composite steps https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/ -->
+                    <li><em>will-change</em> property</li>
+                    <!-- replaces the translate 3d hack which utilizes hardware accelleration, will-change lets your browser know that you will be animating and that rendering will be a priority https://dev.opera.com/articles/css-will-change-property/ -->
+
                 </ul>
             </div>
         </div>
@@ -84,19 +72,21 @@
             <div class="slide-content">
                 <ul>
                     <li>Vestibular disorders
-                        <br>-<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html">WCAG 2.0 guidelines</a>
+                        <br>-<a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/seizure.html" target="blank">WCAG 2.0
+                            guidelines</a>
                     </li>
                     <!-- Vestibule system is responsible for sensory information processing and spatial orientation, may experience motion sickness, balance problems, headaches, and nausua -->
-                    <li>speed and size of motion
-                        <br>-<a href="https://admissions.unl.edu/why-nebraska/#mindsets">personal example</a>
+                    <li>Speed and size of motion
+                        <br>-<a href="https://admissions.unl.edu/why-nebraska/#mindsets" target="blank">Personal
+                            example</a>
                     </li>
                     <!-- one time we had the whole background transition around in a waving pattern so we slowed it down and only had it cycle once -->
-                    <li>paralax scrolling</li><!-- use it sparingly -->
-                    <li>prefers-reduced-motion media feature</li>
+                    <li>Parallax scrolling</li><!-- use it sparingly -->
+                    <li><em>prefers-reduced-motion</em> media feature</li>
                     <!-- make sure and turn this on before yo go live to make sure everything looks good -->
-                    <li>hover</li>
+                    <li>Hover</li>
                     <!--  people using keyboard assistant software and phones can't hover, so carefully consider this when making your site -->
-                    <li>flashing color</li> <!--  if content flashes more than three times per second it's too much -->
+                    <li>Flashing color</li> <!--  if content flashes more than three times per second it's too much -->
                 </ul>
             </div>
 
@@ -112,21 +102,22 @@
                 </div>
                 <ul>
                     <li>Transforms
-                        <br>-<a href="https://css-transform.moro.es/">example</a>
+                        <br>-<a href="https://css-transform.moro.es/" target="blank">example</a>
                     </li><!-- scale | rotate | skew | translate -->
-                    <li>Transitions <!-- used when you want to toggle between two states, animation, hover, checked, etc -->
-                        <br>-<a href="https://cubic-bezier.com/">timing function resource</a>
-
+                    <li>Transitions
+                        <!-- used when you want to toggle between two states, animation, hover, checked, etc -->
+                        <br>-<a href="https://cubic-bezier.com/" target="blank">timing function resource</a>
                     </li>
-                    <li>animation</li><!-- great for state based animations where you can repeat the states or you want a series of states -->
-                    <li>keyframes</li>
+                    <li>Animation - CSS Keyframes</li>
+                    <!-- great for state based animations where you can repeat the states or you want a series of states -->
                     <!-- part of animation, either uses from/to or a percentage of how far along it is. If  -->
                 </ul>
             </div>
         </div>
         <div id="cssTransitionExample" class="slide slide-full slide-two-column">
             <h1>CSS Transition Example</h1>
-            <div class="slide-content">
+            <div class="slide-content centered-content">
+                <img src="images/csstransition.jpg" />
             </div>
             <div class="slide-content-right centered-content">
                 <i class="fas fa-heart" id="cssTransition"></i>
@@ -134,17 +125,18 @@
             </div>
         </div>
         <div id="cssAnimationExample" class="slide slide-full slide-two-column">
-            <h1>CSS Animation Example - spinning circle</h1>
-            <div class="slide-content">
+            <h1>CSS Animation - spinning</h1>
+            <div class="slide-content centered-content">
+                <img src="images/cssanimation.jpg" />
             </div>
             <div class="slide-content-right centered-content">
-                <!-- <button id="cssAnimationToggle1">Toggle Animation</button> -->
                 <i class="fas fa-badge" id="cssAnimation"></i>
             </div>
         </div>
         <div id="cssAnimationExample2" class="slide slide-full slide-two-column">
-            <h1>CSS Animation Example - chaining</h1>
-            <div class="slide-content">
+            <h1>CSS Animation - chaining</h1>
+            <div class="slide-content centered-content">
+                <img src="images/cssanimation2.jpg" />
             </div>
             <div class="slide-content-right centered-content">
                 <!-- have this animation https://www.linkedin.com/learning/css-animation/chain-multiple-animations?u=76276188, try to reset it with a click -->
@@ -163,34 +155,40 @@
             <h1>Animating SVGs - CSS</h1>
             <div class="slide-content">
                 <ul>
-                    <li>Why not gifs?
+                    <li>Why not GIFs/videos?
                         <!-- same benefits of SVGs over jpg files; resolution independent, small file size, and accessible, apply styles to svg code instead of IMG tag -->
                     </li>
-                    <li>use independent shapes</li>
+                    <li>Use independent shapes</li>
                     <!-- use lines and shapes, and avoid merging shapes because if you do merge shapes then you lose the ability to move the shapes independently -->
-                    <li>keep drawing simple</li><!-- easier to animate and saves file size -->
-                    <li>name your layers</li>
+                    <li>Keep drawing simple</li><!-- easier to animate and saves file size -->
+                    <li>Name your layers</li>
                     <!-- whether you use sketch, illustator, or another tool be sure and name your layers in meaningful ways, in ilustrator css properties it is nice to make them presentation attributes because that puts them inline -->
-                    <li>optimize your svg</li>
+                    <li>Optimize your svg</li>
                     <!-- use an SVG optimizer such as https://petercollingridge.appspot.com/svg-editor to remove superflous elements; click remove empty elmentes and remove unneccessary groups, choose conservative -->
-                    <li>useful properties - SVG fill, opacity, and CSS transforms</li>
+                    <li>Useful properties - SVG fill, opacity, and CSS transforms</li>
                 </ul>
             </div>
         </div>
         <div id="animatingSVGCSSExample" class="slide slide-full slide-two-column">
             <h1>Animating SVGs - Example</h1>
             <div class="slide-content">
+                <img src="images/svganimation.jpg" />
             </div>
             <div class="slide-content-right centered-content">
                 <!-- have the battery fill animation here!!!!!!!!! -->
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 640 512" xml:space="preserve" enable-background="new 0 0 640 512">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    id="Layer_1" x="0" y="0" viewBox="0 0 640 512" xml:space="preserve"
+                    enable-background="new 0 0 640 512">
                     <style type="text/css">
-                      .st1{fill:#FFFFFF;}
+                        .st1 {
+                            fill: #FFFFFF;
+                        }
                     </style>
-                    <rect id="batteryMeter" x="96" y="192" width="416" height="128"/>
-                    <path d="M616 160h-8v-16c0-26.51-21.49-48-48-48H48c-26.51 0-48 21.49-48 48v224c0 26.51 21.49 48 48 48h512c26.51 0 48-21.49 48-48v-16h8c13.25 0 24-10.75 24-24V184C640 170.75 629.25 160 616 160zM576 288h-32v64H64V160h480v64h32V288z"/>
-                    <rect x="64" y="192" class="st1" width="32" height="128"/>
-                  </svg>
+                    <rect id="batteryMeter" x="96" y="192" width="416" height="128" />
+                    <path
+                        d="M616 160h-8v-16c0-26.51-21.49-48-48-48H48c-26.51 0-48 21.49-48 48v224c0 26.51 21.49 48 48 48h512c26.51 0 48-21.49 48-48v-16h8c13.25 0 24-10.75 24-24V184C640 170.75 629.25 160 616 160zM576 288h-32v64H64V160h480v64h32V288z" />
+                    <rect x="64" y="192" class="st1" width="32" height="128" />
+                </svg>
             </div>
         </div>
         <div id="animatingJS" class="slide slide-full">
@@ -198,11 +196,13 @@
             <div class="slide-content">
                 <ul>
                     <li>Offers far more control
-                        <!-- GSAP is a very powerful tool that allows you to do very complex animations -->
+                        <!-- GSAP is a very powerful tool that allows you to do very complex animations
+                        https://greensock.com/get-started/ -->
                     </li>
                     <li>Dynamic Animations</li>
                     <!-- handles changes mid-animation better -->
-                    <li>Utilize Plugins</li><!-- whether it's using physics or morphing svgs aor other complex tasks there may be JS libraries out there to help -->
+                    <li>Utilize Plugins</li>
+                    <!-- whether it's using physics or morphing svgs aor other complex tasks there may be JS libraries out there to help -->
                     <li>Stronger browser support</li>
                     <!-- Support for CSS is constantly improving as people move away from old browsers, but if that is something that you need then JS may be the best solution -->
                     <li>Use Both!</li><!-- use JS for the logic and CSS for the motion if you would prefer -->
@@ -212,20 +212,17 @@
         <div id="GSAPExample" class="slide slide-full slide-two-column">
             <h1>GSAP motion example</h1>
             <div class="slide-content">
+                <img src="images/gsapMotion.jpg" />
             </div>
-            <div class="slide-content-right centered-content">
+            <div class="slide-content-right centered-content" id="gsapMotionExample">
                 <!-- https://codepen.io/GreenSock/pen/gOpdKpm
                 consider doing this too https://codepen.io/dsenneff/pen/2c3e5bc86b372d5424b00edaf4990173 -->
                 <svg id="motionPath" viewBox="-20 0 557 190">
-                    <path id="path" stroke="#000000" d="M0.47,69.14C21.21,13.16,34.25-0.6,42.75,0.57
-                      C58.51,2.73,60.58,56.4,75.33,57.14c14.33,0.72,21.22-49.52,39.43-50.29c18.61-0.78,28.8,50.93,46.29,49.71
-                      c16.86-1.17,19.59-50.13,37.71-52c18.53-1.91,29.82,47.8,50.86,46.86c20.05-0.9,24.59-46.68,44.57-48
-                      c22.99-1.51,35.7,57.86,58.29,57.14c9.77-0.31,21.79-11.89,34.86-53.14" />
+                    <path id="path" fill="none"
+                        d="M8,102 C15,83 58,25 131,24 206,24 233,63 259,91 292,125 328,155 377,155 464,155 497,97 504,74" />
                 </svg>
 
-                <div id="box">
-
-                </div>
+                <div id="box"></div>
             </div>
         </div>
         <div id="lottie" class="slide slide-full">
@@ -234,8 +231,9 @@
                 <ul>
                     <li>After Effects -> Bodymoving Plugin -> JS Animation</li>
                     <li>Allowing animators to make the animation
-                        <br>-<a href="https://lottiefiles.com/">example animations</a>
-                        <br>-<a href="https://airbnb.io/lottie/#/supported-features">Supported Features</a>
+                        <br>-<a href="https://lottiefiles.com/" target="blank">example animations</a>
+                        <br>-<a href="https://airbnb.io/lottie/#/supported-features" target="blank">Supported
+                            Features</a>
                     </li><!-- use this site to explore lottie exampels from the community -->
                     <li>Don't need to know code</li><!-- works with Native IOS, Android, Windows, and Web -->
                     <li>Broad support</li><!-- works with Native IOS, Android, Windows, and Web -->
@@ -248,19 +246,22 @@
         </div>
         <div id="lottieExample" class="slide slide-full slide-two-column">
             <h1>Lottie Example</h1>
-            <div class="slide-content">
+            <div class="slide-content centered-content">
+                <img src="images/lottie.jpg" />
             </div>
             <div class="slide-content-right centered-content">
                 <div id="lottieAnimation"></div>>
-
-                <div id="box">
-
-                </div>
             </div>
         </div>
     </div>
-    <!-- <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- If there is time for adobe animate
+                    https://www.linkedin.com/learning/web-motion-for-beginners-final-project/
+                    https://www.linkedin.com/learning/adobe-animate-cc-for-web-designers/
+                 -->
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>

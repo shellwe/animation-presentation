@@ -48,12 +48,19 @@
             <div class="slide-content">
                 <ul>
                     <li>transform and opacity are cheapest cost to performance</li>
-                    <li>Rendering Pipeline order<br />
+                    <li>Rendering Pipeline order:<br />
                         Style > Layout > Paint > Composite</li>
+                        <!-- style calculates which styles apply to the elements
+                        layout generate geometry and position of each element
+                        paint fills out the pixels of each element in the layers that make out the page
+                        composite which draws the layers out on the screen
+                        transofrm and opacity just have to be done on composite-->
                     <li>use sparingly
                         <br>-<a href="https://csstriggers.com/">Guide for how performant operations are on each
-                            browser</a><!-- avoid having content animate off screen -->
+                            browser</a><!-- so if you has to go through all 3 for every single frame the browswer would have to go through the layout, paint and composite steps https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/ -->
                     </li>
+                    <li>will-change property</li> <!-- replaces the translate 3d hack which utilizes hardware accelleration, will-change lets your browser know that you will be animating and that rendering will be a priority https://dev.opera.com/articles/css-will-change-property/ -->
+                    
                 </ul>
             </div>
         </div>
@@ -68,6 +75,7 @@
                     <li>What can be animated?
                         <br>-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">docs</a>
                     </li>
+                    <li>Organization</li><!-- collaborate as a team to decide where to keep the animation styles, I try to keep the animation styles with the element that is being animated if they are being used once but will have an animations SCSS module for the shared ones -->
                 </ul>
             </div>
         </div>
@@ -103,17 +111,16 @@
                     <span class="translate"></span>
                 </div>
                 <ul>
-                    <li>Transforms - scale | rotate | skew | translate
+                    <li>Transforms
                         <br>-<a href="https://css-transform.moro.es/">example</a>
-                    </li><!-- should I show an example of each of these? -->
-                    <li>Transitions - property | duration | delay | timing-function
-                        <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
+                    </li><!-- scale | rotate | skew | translate -->
+                    <li>Transitions <!-- used when you want to toggle between two states, animation, hover, checked, etc -->
+                        <br>-<a href="https://cubic-bezier.com/">timing function resource</a>
 
                     </li>
-                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode
-                        | play-state</li>
-                    <li>keyframes - from | to</li>
-                    <!-- keyframes allow you to use the same action over and over -->
+                    <li>animation</li><!-- great for state based animations where you can repeat the states or you want a series of states -->
+                    <li>keyframes</li>
+                    <!-- part of animation, either uses from/to or a percentage of how far along it is. If  -->
                 </ul>
             </div>
         </div>
@@ -171,29 +178,34 @@
             </div>
         </div>
         <div id="animatingSVGCSSExample" class="slide slide-full slide-two-column">
-            <h1>CSS Animation Example</h1>
+            <h1>Animating SVGs - Example</h1>
             <div class="slide-content">
             </div>
             <div class="slide-content-right centered-content">
                 <!-- have the battery fill animation here!!!!!!!!! -->
-                <i class="fas fa-badge" id="cssAnimation"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 640 512" xml:space="preserve" enable-background="new 0 0 640 512">
+                    <style type="text/css">
+                      .st1{fill:#FFFFFF;}
+                    </style>
+                    <rect id="batteryMeter" x="96" y="192" width="416" height="128"/>
+                    <path d="M616 160h-8v-16c0-26.51-21.49-48-48-48H48c-26.51 0-48 21.49-48 48v224c0 26.51 21.49 48 48 48h512c26.51 0 48-21.49 48-48v-16h8c13.25 0 24-10.75 24-24V184C640 170.75 629.25 160 616 160zM576 288h-32v64H64V160h480v64h32V288z"/>
+                    <rect x="64" y="192" class="st1" width="32" height="128"/>
+                  </svg>
             </div>
         </div>
-        <div id="animatingSVGGSAP" class="slide slide-full">
-            <h1>Animating SVGs - JS (GSAP)</h1>
+        <div id="animatingJS" class="slide slide-full">
+            <h1>Animation - JS</h1>
             <div class="slide-content">
                 <ul>
                     <li>Offers far more control
                         <!-- GSAP is a very powerful tool that allows you to do very complex animations -->
                     </li>
-                    <li>use independent shapes</li>
-                    <!-- use lines and shapes, and avoid merging shapes because if you do merge shapes then you lose the ability to move the shapes independently -->
-                    <li>keep drawing simple</li><!-- easier to animate and saves file size -->
-                    <li>name your layers</li>
-                    <!-- whether you use sketch, illustator, or another tool be sure and name your layers in meaningful ways, in ilustrator css properties it is nice to make them presentation attributes because that puts them inline -->
-                    <li>optimize your svg</li>
-                    <!-- use an SVG optimizer such as https://petercollingridge.appspot.com/svg-editor to remove superflous elements; click remove empty elmentes and remove unneccessary groups, choose conservative -->
-                    <li>useful properties - SVG fill, opacity, and CSS transforms</li>
+                    <li>Dynamic Animations</li>
+                    <!-- handles changes mid-animation better -->
+                    <li>Utilize Plugins</li><!-- whether it's using physics or morphing svgs aor other complex tasks there may be JS libraries out there to help -->
+                    <li>Stronger browser support</li>
+                    <!-- Support for CSS is constantly improving as people move away from old browsers, but if that is something that you need then JS may be the best solution -->
+                    <li>Use Both!</li><!-- use JS for the logic and CSS for the motion if you would prefer -->
                 </ul>
             </div>
         </div>
@@ -225,8 +237,10 @@
                     </li><!-- use this site to explore lottie exampels from the community -->
                     <li>Don't need to know code</li><!-- works with Native IOS, Android, Windows, and Web -->
                     <li>Broad support</li><!-- works with Native IOS, Android, Windows, and Web -->
-                    <li>easy to impliment</li><!-- it is all pregenerated so it can be difficult to modify or hook into assets -->
-                    <li>not flexible</li><!-- it is best used with svgs and if you need to use rastorized objects or if the animations are complex enough you may consider just using an embedded video to ease up on resources. -->
+                    <li>easy to impliment</li>
+                    <!-- it is all pregenerated so it can be difficult to modify or hook into assets -->
+                    <li>not flexible</li>
+                    <!-- it is best used with svgs and if you need to use rastorized objects or if the animations are complex enough you may consider just using an embedded video to ease up on resources. -->
                 </ul>
             </div>
         </div>
@@ -243,8 +257,8 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <!-- <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>

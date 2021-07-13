@@ -144,6 +144,172 @@ img {
   grid-area: slideContentRight;
 }
 
+#animatingSVGCSSExample #batteryMeter {
+  -webkit-animation: charge 5s ease-out infinite, batteryStatus 5s ease-out infinite;
+          animation: charge 5s ease-out infinite, batteryStatus 5s ease-out infinite;
+}
+
+@-webkit-keyframes charge {
+  0% {
+    -webkit-transform: scaleX(0.1);
+            transform: scaleX(0.1);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes charge {
+  0% {
+    -webkit-transform: scaleX(0.1);
+            transform: scaleX(0.1);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes batteryStatus {
+  0%, 30% {
+    fill: red;
+  }
+  40%, 100% {
+    fill: #72CC58;
+  }
+}
+
+@keyframes batteryStatus {
+  0%, 30% {
+    fill: red;
+  }
+  40%, 100% {
+    fill: #72CC58;
+  }
+}
+
+#cssTransitions .transforms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#cssTransitions .transforms span {
+  width: 100px;
+  height: 100px;
+}
+
+#cssTransitions .transforms .scale {
+  background-color: blue;
+  -webkit-animation: scaleSample 5s infinite alternate;
+          animation: scaleSample 5s infinite alternate;
+  -webkit-transform: scale(0.3, 0.3);
+          transform: scale(0.3, 0.3);
+  -webkit-transition-property: -webkit-transform 1s;
+  transition-property: -webkit-transform 1s;
+  transition-property: transform 1s;
+  transition-property: transform 1s, -webkit-transform 1s;
+}
+
+#cssTransitions .transforms .rotate {
+  background-color: purple;
+  -webkit-animation: rotateSample 5s infinite alternate;
+          animation: rotateSample 5s infinite alternate;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition-property: -webkit-transform 1s;
+  transition-property: -webkit-transform 1s;
+  transition-property: transform 1s;
+  transition-property: transform 1s, -webkit-transform 1s;
+}
+
+#cssTransitions .transforms .skew {
+  background-color: orange;
+  -webkit-animation: skewSample 5s infinite alternate;
+          animation: skewSample 5s infinite alternate;
+  -webkit-transform: skew(60deg, 10deg);
+          transform: skew(60deg, 10deg);
+  -webkit-transition-property: -webkit-transform 1s;
+  transition-property: -webkit-transform 1s;
+  transition-property: transform 1s;
+  transition-property: transform 1s, -webkit-transform 1s;
+}
+
+#cssTransitions .transforms .translate {
+  background-color: green;
+  -webkit-animation: translateSample 5s infinite alternate;
+          animation: translateSample 5s infinite alternate;
+  -webkit-transform: translate(50px, 10px);
+          transform: translate(50px, 10px);
+  -webkit-transition-property: -webkit-transform 1s;
+  transition-property: -webkit-transform 1s;
+  transition-property: transform 1s;
+  transition-property: transform 1s, -webkit-transform 1s;
+}
+
+@-webkit-keyframes scaleSample {
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes scaleSample {
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes rotateSample {
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateSample {
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes skewSample {
+  100% {
+    -webkit-transform: skew(0deg, 0deg);
+            transform: skew(0deg, 0deg);
+  }
+}
+
+@keyframes skewSample {
+  100% {
+    -webkit-transform: skew(0deg, 0deg);
+            transform: skew(0deg, 0deg);
+  }
+}
+
+@-webkit-keyframes translateSample {
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes translateSample {
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
 #cssTransitionExample #cssTransition {
   -webkit-transition: all 1s;
   transition: all 1s;
@@ -161,6 +327,16 @@ img {
   color: red;
   -webkit-animation: spinningColors 8s infinite;
           animation: spinningColors 8s infinite;
+}
+
+.stopAnimation {
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+
+.stopAnimation * {
+  -webkit-animation: none !important;
+          animation: none !important;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -213,6 +389,147 @@ img {
     color: green;
     -webkit-transform: rotate(270deg);
             transform: rotate(270deg);
+  }
+}
+
+.flipping-text-trigger {
+  text-align: center;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+}
+
+.flipping-text-trigger span {
+  display: inline-block;
+  color: #77c6bc;
+  -webkit-transform-origin: 50% 70%;
+          transform-origin: 50% 70%;
+  font-size: 100px;
+}
+
+.flipping-text-trigger span:nth-child(2n) {
+  color: purple;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(1) {
+  -webkit-animation: flipUp 1s ease-in both, flipDown .5s ease-out 2s forwards, swing 4s ease forwards 4.1s;
+          animation: flipUp 1s ease-in both, flipDown .5s ease-out 2s forwards, swing 4s ease forwards 4.1s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(2) {
+  -webkit-animation: flipUp 1s ease-in .2s both, flipDown .5s ease-out 2.2s forwards, swing 4s ease forwards 3.8s;
+          animation: flipUp 1s ease-in .2s both, flipDown .5s ease-out 2.2s forwards, swing 4s ease forwards 3.8s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(3) {
+  -webkit-animation: flipUp 1s ease-in .4s both, flipDown .5s ease-out 2.4s forwards, swing 4s ease forwards 4.4s;
+          animation: flipUp 1s ease-in .4s both, flipDown .5s ease-out 2.4s forwards, swing 4s ease forwards 4.4s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(4) {
+  -webkit-animation: flipUp 1s ease-in .6s both, flipDown .5s ease-out 2.6s forwards, swing 4s ease forwards 4.8s;
+          animation: flipUp 1s ease-in .6s both, flipDown .5s ease-out 2.6s forwards, swing 4s ease forwards 4.8s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(5) {
+  -webkit-animation: flipUp 1s ease-in .8s both, flipDown .5s ease-out 2.8s forwards, swing 4s ease forwards 4.6s;
+          animation: flipUp 1s ease-in .8s both, flipDown .5s ease-out 2.8s forwards, swing 4s ease forwards 4.6s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(6) {
+  -webkit-animation: flipUp 1s ease-in 1s both, flipDown .5s ease-out 3s forwards, swing 4s ease forwards 5s;
+          animation: flipUp 1s ease-in 1s both, flipDown .5s ease-out 3s forwards, swing 4s ease forwards 5s;
+}
+
+.flipping-text-trigger.flipping-text span:nth-child(7) {
+  -webkit-animation: flipUp 1s ease-in 1.2s both, flipDown .5s ease-out 3.2s forwards, swing 4s ease forwards 4s;
+          animation: flipUp 1s ease-in 1.2s both, flipDown .5s ease-out 3.2s forwards, swing 4s ease forwards 4s;
+}
+
+@-webkit-keyframes flipUp {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    tranform: rotateX(0deg);
+  }
+}
+
+@keyframes flipUp {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    tranform: rotateX(0deg);
+  }
+}
+
+@-webkit-keyframes flipDown {
+  to {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+@keyframes flipDown {
+  to {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+  20% {
+    -webkit-transform: rotateX(-180deg) rotateY(-45deg);
+            transform: rotateX(-180deg) rotateY(-45deg);
+  }
+  40% {
+    -webkit-transform: rotateX(-180deg) rotateY(45deg);
+            transform: rotateX(-180deg) rotateY(45deg);
+  }
+  60% {
+    -webkit-transform: rotateX(-180deg) rotateY(-45deg);
+            transform: rotateX(-180deg) rotateY(-45deg);
+  }
+  80% {
+    -webkit-transform: rotateX(-180deg) rotateY(45deg);
+            transform: rotateX(-180deg) rotateY(45deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+  20% {
+    -webkit-transform: rotateX(-180deg) rotateY(-45deg);
+            transform: rotateX(-180deg) rotateY(-45deg);
+  }
+  40% {
+    -webkit-transform: rotateX(-180deg) rotateY(45deg);
+            transform: rotateX(-180deg) rotateY(45deg);
+  }
+  60% {
+    -webkit-transform: rotateX(-180deg) rotateY(-45deg);
+            transform: rotateX(-180deg) rotateY(-45deg);
+  }
+  80% {
+    -webkit-transform: rotateX(-180deg) rotateY(45deg);
+            transform: rotateX(-180deg) rotateY(45deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -21,6 +21,7 @@
 5. How to detect how much expense a web animation has
 6. have animation only run when its on screen and maybe add in on click show first item
 7. Add examples of animated gifs  -->
+
 <body>
     <div id="container">
         <div id="intro" class="slide slide-title">
@@ -31,7 +32,8 @@
             <h1>When to use animations</h1>
             <div class="slide-content">
                 <ul>
-                    <li>draw attention</li> <!-- our eyes are hardwired to look at moving objects, so we want to use it for whenever we are changing icons or text, and  -->
+                    <li>draw attention</li>
+                    <!-- our eyes are hardwired to look at moving objects, so we want to use it for whenever we are changing icons or text, and  -->
                     <li>tell a story</li>
                     <li>guidance</li>
                     <!-- should feel natural - progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
@@ -49,7 +51,7 @@
                     <li>Rendering Pipeline order<br />
                         Style > Layout > Paint > Composite</li>
                     <li>use sparingly
-                        <br>-<a href="https://csstriggers.com/">Guide for how performant operatoins are on each
+                        <br>-<a href="https://csstriggers.com/">Guide for how performant operations are on each
                             browser</a><!-- avoid having content animate off screen -->
                     </li>
                 </ul>
@@ -85,18 +87,25 @@
                     <li>prefers-reduced-motion media feature</li>
                     <!-- make sure and turn this on before yo go live to make sure everything looks good -->
                     <li>hover</li>
+                    <!--  people using keyboard assistant software and phones can't hover, so carefully consider this when making your site -->
                     <li>flashing color</li> <!--  if content flashes more than three times per second it's too much -->
                 </ul>
             </div>
 
         </div>
-        <div id="cssTransform" class="slide slide-full">
+        <div id="cssTransitions" class="slide slide-full">
             <h1>CSS Transitions and Animation</h1>
             <div class="slide-content">
+                <div class="transforms toggle-animation">
+                    <span class="scale"></span>
+                    <span class="rotate"></span>
+                    <span class="skew"></span>
+                    <span class="translate"></span>
+                </div>
                 <ul>
                     <li>Transforms - scale | rotate | skew | translate
                         <br>-<a href="https://css-transform.moro.es/">example</a>
-                    </li><!--  should I show an example of each of these? -->
+                    </li><!-- should I show an example of each of these? -->
                     <li>Transitions - property | duration | delay | timing-function
                         <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
 
@@ -109,16 +118,16 @@
             </div>
         </div>
         <div id="cssTransitionExample" class="slide slide-full slide-two-column">
-            <h1>CSS Animation Example</h1>
+            <h1>CSS Transition Example</h1>
             <div class="slide-content">
             </div>
             <div class="slide-content-right centered-content">
-                <!-- <button id="cssAnimationToggle1">Toggle Animation</button> -->
                 <i class="fas fa-heart" id="cssTransition"></i>
+                <!-- if you go into the animation, in this case got o hover and go to the cubic bezier part you can see the cubic bezier animation and change it -->
             </div>
         </div>
         <div id="cssAnimationExample" class="slide slide-full slide-two-column">
-            <h1>CSS Animation Example</h1>
+            <h1>CSS Animation Example - spinning circle</h1>
             <div class="slide-content">
             </div>
             <div class="slide-content-right centered-content">
@@ -126,37 +135,111 @@
                 <i class="fas fa-badge" id="cssAnimation"></i>
             </div>
         </div>
-        <div id="animatingSVGs" class="slide slide-full">
-            <h1>Animating SVGs</h1>
+        <div id="cssAnimationExample2" class="slide slide-full slide-two-column">
+            <h1>CSS Animation Example - chaining</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <!-- have this animation https://www.linkedin.com/learning/css-animation/chain-multiple-animations?u=76276188, try to reset it with a click -->
+                <div class="flipping-text-trigger">
+                    <span>W</span>
+                    <span>E</span>
+                    <span>L</span>
+                    <span>C</span>
+                    <span>O</span>
+                    <span>M</span>
+                    <span>E</span>
+                </div>
+            </div>
+        </div>
+        <div id="animatingSVGCSS" class="slide slide-full">
+            <h1>Animating SVGs - CSS</h1>
             <div class="slide-content">
                 <ul>
-                    <li>Transforms - scale | rotate | skew | translate
-                        <br>-<a href="https://css-transform.moro.es/">example</a>
+                    <li>Why not gifs?
+                        <!-- same benefits of SVGs over jpg files; resolution independent, small file size, and accessible, apply styles to svg code instead of IMG tag -->
                     </li>
-                    <li>Transitions - property | duration | delay | timing-function
-                        <br>-<a href="https://cubic-bezier.com/">example for bounce</a>
-                    </li>
-                    <li>animation - name | duration | delay | timing-function | iteration-count | direction | fill-mode
-                        | play-state</li>
-                    <li>keyframes - from | to</li>
-                    <!-- keyframes allow you to use the same action over and over -->
+                    <li>use independent shapes</li>
+                    <!-- use lines and shapes, and avoid merging shapes because if you do merge shapes then you lose the ability to move the shapes independently -->
+                    <li>keep drawing simple</li><!-- easier to animate and saves file size -->
+                    <li>name your layers</li>
+                    <!-- whether you use sketch, illustator, or another tool be sure and name your layers in meaningful ways, in ilustrator css properties it is nice to make them presentation attributes because that puts them inline -->
+                    <li>optimize your svg</li>
+                    <!-- use an SVG optimizer such as https://petercollingridge.appspot.com/svg-editor to remove superflous elements; click remove empty elmentes and remove unneccessary groups, choose conservative -->
+                    <li>useful properties - SVG fill, opacity, and CSS transforms</li>
                 </ul>
             </div>
         </div>
-        <div id="animatingSVGs" class="slide slide-full">
-            <h1>GSAP</h1>
+        <div id="animatingSVGCSSExample" class="slide slide-full slide-two-column">
+            <h1>CSS Animation Example</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <!-- have the battery fill animation here!!!!!!!!! -->
+                <i class="fas fa-badge" id="cssAnimation"></i>
+            </div>
+        </div>
+        <div id="animatingSVGGSAP" class="slide slide-full">
+            <h1>Animating SVGs - JS (GSAP)</h1>
             <div class="slide-content">
                 <ul>
-                    <li>Tweening - from | to | fromto
-                        <br>-<a href="https://greensock.com/">site</a>
+                    <li>Offers far more control
+                        <!-- GSAP is a very powerful tool that allows you to do very complex animations -->
                     </li>
-                    <li>Easing - ease | duration
-                        <br>-<a href="https://greensock.com/ease-visualizer/">example</a>
-                    </li>
-                    <li>Pinning - setPin, pushFollowers, duration</li>
-                    <li></li>
-                    <!-- keyframes allow you to use the same action over and over -->
+                    <li>use independent shapes</li>
+                    <!-- use lines and shapes, and avoid merging shapes because if you do merge shapes then you lose the ability to move the shapes independently -->
+                    <li>keep drawing simple</li><!-- easier to animate and saves file size -->
+                    <li>name your layers</li>
+                    <!-- whether you use sketch, illustator, or another tool be sure and name your layers in meaningful ways, in ilustrator css properties it is nice to make them presentation attributes because that puts them inline -->
+                    <li>optimize your svg</li>
+                    <!-- use an SVG optimizer such as https://petercollingridge.appspot.com/svg-editor to remove superflous elements; click remove empty elmentes and remove unneccessary groups, choose conservative -->
+                    <li>useful properties - SVG fill, opacity, and CSS transforms</li>
                 </ul>
+            </div>
+        </div>
+        <div id="GSAPExample" class="slide slide-full slide-two-column">
+            <h1>CSS Transition Example</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <svg id="motionPath" viewBox="-20 0 557 190">
+                    <path id="path" stroke="#000000" d="M0.47,69.14C21.21,13.16,34.25-0.6,42.75,0.57
+                      C58.51,2.73,60.58,56.4,75.33,57.14c14.33,0.72,21.22-49.52,39.43-50.29c18.61-0.78,28.8,50.93,46.29,49.71
+                      c16.86-1.17,19.59-50.13,37.71-52c18.53-1.91,29.82,47.8,50.86,46.86c20.05-0.9,24.59-46.68,44.57-48
+                      c22.99-1.51,35.7,57.86,58.29,57.14c9.77-0.31,21.79-11.89,34.86-53.14" />
+                </svg>
+
+                <div id="box">
+
+                </div>
+            </div>
+        </div>
+        <div id="lottie" class="slide slide-full">
+            <h1>Animating with Lottie</h1>
+            <div class="slide-content">
+                <ul>
+                    <li>After Effects -> Bodymoving Plugin -> JS Animation</li>
+                    <li>Allowing animators to make the animation
+                        <br>-<a href="https://lottiefiles.com/">example animations</a>
+                        <br>-<a href="https://airbnb.io/lottie/#/supported-features">Supported Features</a>
+                    </li><!-- use this site to explore lottie exampels from the community -->
+                    <li>Don't need to know code</li><!-- works with Native IOS, Android, Windows, and Web -->
+                    <li>Broad support</li><!-- works with Native IOS, Android, Windows, and Web -->
+                    <li>easy to impliment</li><!-- it is all pregenerated so it can be difficult to modify or hook into assets -->
+                    <li>not flexible</li><!-- it is best used with svgs and if you need to use rastorized objects or if the animations are complex enough you may consider just using an embedded video to ease up on resources. -->
+                </ul>
+            </div>
+        </div>
+        <div id="lottieExample" class="slide slide-full slide-two-column">
+            <h1>Lottie Example</h1>
+            <div class="slide-content">
+            </div>
+            <div class="slide-content-right centered-content">
+                <div id="lottieAnimation"></div>>
+
+                <div id="box">
+
+                </div>
             </div>
         </div>
     </div>
@@ -164,7 +247,16 @@
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/CSSRulePlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/EaselPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/PixiPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="js/lottie.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 

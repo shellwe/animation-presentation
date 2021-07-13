@@ -44,7 +44,7 @@ var tween = gsap.to("#box", {
   motionPath: {
     path: "#path",
     align: "#path",
-    alignOrigin: [0.5, 0.5], // <-- play with these numbers
+    alignOrigin: [0.5, 0.5],
     autoRotate: true
   },
   duration: 5, 
@@ -52,12 +52,11 @@ var tween = gsap.to("#box", {
   repeat: 100,
   yoyo: true
 });
-
-// to make it responsive on window resize...
 window.addEventListener("resize", function() {
   var time = tween.totalTime();
   tween.seek(0).invalidate().totalTime(time);
 });
+
 
 // ----- Lottie example ----- 
 var animatoin = bodymovin.loadAnimation({

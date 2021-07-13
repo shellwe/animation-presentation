@@ -40,17 +40,15 @@ $(".toggle-animation").click(function() {
 //register the plugin (just once)
 gsap.registerPlugin(MotionPathPlugin);
 
-var tween = gsap.to("#box", {
+var tween = gsap.to("#sled", {
   motionPath: {
     path: "#path",
     align: "#path",
-    alignOrigin: [0.5, 0.5],
-    autoRotate: true
+    alignOrigin: [0.5, 0.8],
   },
   duration: 5, 
   ease: "power1.inOut",
   repeat: 100,
-  yoyo: true
 });
 window.addEventListener("resize", function() {
   var time = tween.totalTime();

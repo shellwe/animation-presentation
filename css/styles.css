@@ -554,10 +554,10 @@ img {
   stroke: gray;
 }
 
-#gsapMotionExample #box {
+#gsapMotionExample #sled {
   width: 100px;
-  height: 100px;
-  background-color: rgba(136, 206, 2, 0.6);
-  border: 2px solid white;
+  height: auto;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 /*# sourceMappingURL=styles.css.map */

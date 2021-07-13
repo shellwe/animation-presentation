@@ -60,6 +60,10 @@ img {
   font-size: 3rem;
 }
 
+.slide li {
+  margin-bottom: 15px;
+}
+
 .slide i.fas {
   font-size: 300px;
 }
@@ -78,6 +82,7 @@ img {
 .slide .centered-content {
   display: -ms-grid;
   display: grid;
+  overflow: hidden;
 }
 
 .slide .centered-content * {

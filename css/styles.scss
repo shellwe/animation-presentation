@@ -50,6 +50,9 @@ img {
         font-size: 3rem;
     }
 
+    li {
+        margin-bottom:15px;
+    }
     i.fas {
         font-size: 300px;
     }
@@ -67,6 +70,7 @@ img {
 
     .centered-content {
         display: grid;
+        overflow: hidden;
 
         * {
             justify-self: center;

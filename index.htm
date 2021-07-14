@@ -34,7 +34,7 @@
                 <ul>
                     <li>Draw attention</li>
                     <!-- our eyes are hardwired to look at moving objects, so we want to use it for whenever we are changing icons or text, and  -->
-                    <li>Tell a story</li>
+                    <li>Tell a story</li><!-- this can be a simple icon elaborating what it is trying to portray or a full cinematic animation, weather app showing rain or sun -->
                     <li>Guidance</li>
                     <!-- should feel natural - progress bars/spinning wheels tell you to wait, scrollspy is less jarring when moving around the site -->
                     <li>What can be animated?
@@ -52,8 +52,8 @@
                     <li>Rendering pipeline order:<br />
                         Style > Layout > Paint > Composite</li>
                     <!-- style calculates which styles apply to the elements
-                        layout generate geometry and position of each element
-                        paint fills out the pixels of each element in the layers that make out the page
+                        Layout generate geometry and position of each element
+                        Paint fills out the pixels of each element in the layers that make out the page
                         composite which draws the layers out on the screen
                         transofrm and opacity just have to be done on composite-->
                     <li>Use sparingly
@@ -101,13 +101,13 @@
                 </div>
                 <ul>
                     <li>Transforms
-                        <br>-<a href="https://css-transform.moro.es/" target="blank">example</a>
+                        <br>-<a href="https://css-transform.moro.es/" target="blank">transform generator</a>
                     </li><!-- scale | rotate | skew | translate -->
                     <li>Transitions
                         <!-- used when you want to toggle between two states, animation, hover, checked, etc -->
-                        <br>-<a href="https://cubic-bezier.com/" target="blank">timing function resource</a>
                     </li>
-                    <li>Animation - CSS Keyframes</li>
+                    <li>Animation - CSS Keyframes                        <br>-<a href="https://cubic-bezier.com/" target="blank">timing function resource</a>
+                    </li>
                     <!-- great for state based animations where you can repeat the states or you want a series of states -->
                     <!-- part of animation, either uses from/to or a percentage of how far along it is. If  -->
                 </ul>
@@ -138,7 +138,6 @@
                 <img src="images/cssanimation2.jpg" />
             </div>
             <div class="slide-content-right centered-content">
-                <!-- have this animation https://www.linkedin.com/learning/css-animation/chain-multiple-animations?u=76276188, try to reset it with a click -->
                 <div class="flipping-text-trigger">
                     <span>W</span>
                     <span>E</span>
@@ -154,7 +153,7 @@
             <h1>Animating SVGs - CSS</h1>
             <div class="slide-content">
                 <ul>
-                    <li>Why not GIFs/videos?
+                    <li>Why not GIFs?
                         <!-- same benefits of SVGs over jpg files; resolution independent, small file size, and accessible, apply styles to svg code instead of IMG tag -->
                     </li>
                     <li>Use independent shapes</li>
@@ -170,11 +169,10 @@
         </div>
         <div id="animatingSVGCSSExample" class="slide slide-full slide-two-column">
             <h1>Animating SVGs - Example</h1>
-            <div class="slide-content">
+            <div class="slide-content centered-content">
                 <img src="images/svganimation.jpg" />
             </div>
             <div class="slide-content-right centered-content">
-                <!-- have the battery fill animation here!!!!!!!!! -->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                     id="Layer_1" x="0" y="0" viewBox="0 0 640 512" xml:space="preserve"
                     enable-background="new 0 0 640 512">
@@ -208,6 +206,30 @@
                 </ul>
             </div>
         </div>
+        <div id="GSAPBounce" class="slide slide-full slide-two-column">
+            <h1>Animating SVGs - Example</h1>
+            <div class="slide-content centered-content">
+                <img src="images/gsapBalls.jpg" />
+            </div>
+            <div class="slide-content-right centered-content">
+                <div class="nav">
+                    <button id="play">play()</button>
+                    <button id="pause">pause()</button>
+                    <button id="resume">resume()</button>
+                    <button id="reverse">reverse()</button>
+                    <button id="restart">restart()</button>
+                  </div>
+                                <div class="balls">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                
+            </div>
+        </div>
         <div id="GSAPExample" class="slide slide-full slide-two-column">
             <h1>GSAP motion example</h1>
             <div class="slide-content">
@@ -228,7 +250,7 @@
             <h1>Animating with Lottie</h1>
             <div class="slide-content">
                 <ul>
-                    <li>After Effects -> Bodymoving Plugin -> JS Animation</li>
+                    <li>After Effects -> Bodymovin -> JSON</li>
                     <li>Allowing animators to make the animation
                         <br>-<a href="https://lottiefiles.com/" target="blank">example animations</a>
                         <br>-<a href="https://airbnb.io/lottie/#/supported-features" target="blank">Supported
@@ -249,7 +271,7 @@
                 <img src="images/lottie.jpg" />
             </div>
             <div class="slide-content-right centered-content">
-                <div id="lottieAnimation"></div>>
+                <div id="lottieAnimation"></div>
             </div>
         </div>
     </div>

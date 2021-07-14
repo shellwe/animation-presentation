@@ -34,13 +34,19 @@ $(".toggle-animation").click(function() {
     $( this ).toggleClass( "flipping-text" );
   });
 
-  
+// ----- GSAP  example ----- 
+var tween = gsap.from(".balls div", {duration: 1, ease: "bounce", repeat: -1, y: "random(-300,-50)", stagger: 0.5})
+
+document.querySelector("#play").onclick = () => tween.play();
+document.querySelector("#pause").onclick = () => tween.pause();
+document.querySelector("#resume").onclick = () => tween.resume();
+document.querySelector("#reverse").onclick = () => tween.reverse();
+document.querySelector("#restart").onclick = () => tween.restart();
 
 // ----- GSAP MotionPath example ----- 
 //register the plugin (just once)
 gsap.registerPlugin(MotionPathPlugin);
-
-var tween = gsap.to("#sled", {
+var sled = gsap.to("#sled", {
   motionPath: {
     path: "#path",
     align: "#path",
@@ -48,16 +54,16 @@ var tween = gsap.to("#sled", {
   },
   duration: 5, 
   ease: "power1.inOut",
-  repeat: 100,
+  repeat: -1,
 });
 window.addEventListener("resize", function() {
-  var time = tween.totalTime();
-  tween.seek(0).invalidate().totalTime(time);
+  var time = sled.totalTime();
+  sled.seek(0).invalidate().totalTime(time);
 });
 
 
 // ----- Lottie example ----- 
-var animatoin = bodymovin.loadAnimation({
+var animation = bodymovin.loadAnimation({
     container: document.getElementById('lottieAnimation'),
     renderer: 'svg',
     loop: true,

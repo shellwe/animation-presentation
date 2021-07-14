@@ -54,7 +54,7 @@ img {
         margin-bottom:15px;
     }
     i.fas {
-        font-size: 300px;
+        font-size: 250px;
     }
 
     a {
@@ -246,7 +246,7 @@ img {
 @media screen and (prefers-reduced-motion: reduce) {
     #cssAnimationExample {
         #cssAnimation {
-            animation: none;
+            animation: none !important;
         }
     }
 }
@@ -383,7 +383,7 @@ img {
     }
 }
 
-//GSAP example
+//GSAP examples
 #gsapMotionExample {
     #motionPath path {
         stroke-width: 2;
@@ -394,5 +394,18 @@ img {
         width: 100px;
         height: auto;
         transform: scaleX(-1);
+    }
+}
+
+.balls{
+    display:flex;
+    flex-flow: row nowrap;
+    transform: translateY(50px); 
+    div{
+        width:50px;
+        height:50px;
+        margin: 25px;
+        background-color:purple;
+        border-radius: 25px;
     }
 }
